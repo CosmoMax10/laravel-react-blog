@@ -60,7 +60,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $data = ['article' => $article];
+        return view('articles.show', $data);
     }
 
     /**
@@ -71,7 +72,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        $data = ['article' => $article];
+        return view('articles.edit', $data);
     }
 
     /**

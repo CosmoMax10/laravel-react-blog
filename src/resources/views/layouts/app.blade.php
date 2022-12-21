@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
+
     <header>
         <a class="site-title">ミニブログ</a>
     </header>
     <main class="container">
+
         @yield('content')
     </main>
+    <footer>
+        cosmo robinson
+    </footer>
 </body>
 </html>
