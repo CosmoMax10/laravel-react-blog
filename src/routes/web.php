@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,10 @@ Route::get('/', function () {
 
 // Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/articles', ArticleController::class);
+
+});
+
