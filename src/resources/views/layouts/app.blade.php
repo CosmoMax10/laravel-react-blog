@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="/" class="site-title">ミニブログ</a>
+        <a class="site-title">ミニブログ</a>
     </header>
     <main class="container">
         @yield('content')
