@@ -4,14 +4,19 @@
     <h1 class="article-title">{{ $article->title }}</h1>
     <div class="article-info">{{ $article->created_at }}</div>
     <div class="article-body">{{ $article->body}}</div>
+    @can('update', $article)
+
     <div class="article-control">
         <a href="{{ route('articles.edit', $article) }}">編集</a>
-        <a href="{{ route('articles.index') }}">もどる</a>
+
         <form onsubmit="return confirm('本当に削除しますか？')" action="{{ route('articles.destroy', $article) }}" method="post">
             @csrf
             @method('delete')
             <button type="submit">削除</button>
         </form>
     </div>
+    @endcan
+    <a href="{{ route('articles.index') }}">もどる</a>
+
 </article>
 @endsection
