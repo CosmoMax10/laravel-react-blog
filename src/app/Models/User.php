@@ -56,4 +56,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Article::class, 'bookmarks', 'user_id', 'article_id');
     }
+
+    public function is_bookmark($articleId)
+    {
+        return $this->bookmarks()->where('article_id', $articleId)->exists();
+
+    }
 }
