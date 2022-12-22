@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class article extends Model
+class Bookmark extends Model
 {
     use HasFactory;
 
@@ -14,9 +14,8 @@ class article extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function bookmarks()
+    public function article()
     {
-        return $this->hasMany(Bookmark::class);
+        return $this->belongsTo(Article::class);
     }
 }
-
